@@ -1,6 +1,6 @@
 # From Ore to Insight: A Flotation Plant, Six Months of Data — Python Analysis
 
-![Project_Cover](LinkedIn_Cover.png)
+![LinkedIn_Cover](LinkedIn_Cover.png)
 
 ## Executive Summary
 
