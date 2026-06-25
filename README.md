@@ -42,8 +42,11 @@ Three libraries form the foundation: Pandas for data manipulation, Seaborn for v
 That one line revealed something important: the data was loaded correctly, but not yet understood. A string that looks like a date and a datetime object that is a date behave completely differently when filtering or sorting by time. Converting it was a single line — pd.to_datetime() — but recognizing the conversion was necessary required attention to the data, not just the code.
 
 ![Imports](01_imports.png)
+
 ![Type Check](01_type_check.png)
+
 ![Datetime Conversion](01_datetime_conversion.png)
+
 ![Datetime Verify](01_datetime_verify.png)
 
 ### 2. Exploring the Shape of the Data
@@ -53,6 +56,7 @@ Before filtering, .describe() provides the full statistical picture — counts, 
 Several things stood out immediately. Starch Flow ranged from near zero to over 6,300, with a standard deviation exceeding 1,200 — an enormous range for a controlled industrial input. Silica Concentrate ranged from 1.31% to 33.4%. This step does not answer questions. It identifies which questions are worth asking.
 
 ![df.head()](02_df_head.png)
+
 ![df.describe()](02_df_describe.png)
 
 ### 3. Filtering Down to One Day
@@ -76,7 +80,9 @@ Three visualization types reveal different layers of the data:
 - **Line plots over time** — looped automatically across variables, illustrating that automation is not a feature but the point: four lines of code generate four publication-quality charts in sequence on every run
 - 
 ![Pairplot](05_pairplot.png)
+
 ![Heatmap](05_heatmap.png)
+
 ![Line Plot](05_lineplot.png)
 
 ## Key Findings
