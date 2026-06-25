@@ -51,7 +51,7 @@ That one line revealed something important: the data was loaded correctly, but n
 
 ### 2. Exploring the Shape of the Data
 
-Before filtering, .describe() provides the full statistical picture — counts, means, min/max, standard deviation — across every numeric column at once.
+Before filtering, df.head() gives the first look at structure — column names, data types, and the first five rows. Then .describe() provides the full statistical picture — counts, means, min/max, standard deviation — across every numeric column at once.
 
 Several things stood out immediately. Starch Flow ranged from near zero to over 6,300, with a standard deviation exceeding 1,200 — an enormous range for a controlled industrial input. Silica Concentrate ranged from 1.31% to 33.4%. This step does not answer questions. It identifies which questions are worth asking.
 
@@ -78,7 +78,7 @@ Three visualization types reveal different layers of the data:
 - **Pairplot** — plots every variable against every other simultaneously, surfacing correlations, clusters, and outliers before committing to a specific chart
 - **Correlation heatmap** — annotated with coefficients and colored by direction and strength, makes relationships between variables immediately readable
 - **Line plots over time** — looped automatically across variables, illustrating that automation is not a feature but the point: four lines of code generate four publication-quality charts in sequence on every run
-- 
+  
 ![Pairplot](05_pairplot.png)
 
 ![Heatmap](05_heatmap.png)
