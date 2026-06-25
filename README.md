@@ -41,19 +41,31 @@ Three libraries form the foundation: Pandas for data manipulation, Seaborn for v
 
 That one line revealed something important: the data was loaded correctly, but not yet understood. A string that looks like a date and a datetime object that is a date behave completely differently when filtering or sorting by time. Converting it was a single line — pd.to_datetime() — but recognizing the conversion was necessary required attention to the data, not just the code.
 
+![Imports](01_imports.png)
+![Type Check](01_type_check.png)
+![Datetime Conversion](01_datetime_conversion.png)
+![Datetime Verify](01_datetime_verify.png)
+
 ### 2. Exploring the Shape of the Data
 
 Before filtering, .describe() provides the full statistical picture — counts, means, min/max, standard deviation — across every numeric column at once.
 
 Several things stood out immediately. Starch Flow ranged from near zero to over 6,300, with a standard deviation exceeding 1,200 — an enormous range for a controlled industrial input. Silica Concentrate ranged from 1.31% to 33.4%. This step does not answer questions. It identifies which questions are worth asking.
 
+![df.head()](02_df_head.png)
+![df.describe()](02_df_describe.png)
+
 ### 3. Filtering Down to One Day
 
 With 737,000 rows, scope reduction is necessary before visualization is useful. Filtering to June 1st, 2017 using a date range filter in Pandas produces a workable window — one that only works correctly because the datetime conversion happened earlier. If the column had remained a string, the comparison would either fail silently or return incorrect rows.
 
+![Date Filter](03_date_filter.png)
+
 ### 4. Selecting What Matters
 
 Narrowing from 24 columns to 5 — Iron Concentrate, Silica Concentrate, Ore Pulp pH, and Flotation Column 05 Level — makes the dataset workable. The ability to identify and articulate which variables matter is most of what applied analysis actually is.
+
+![Column Selection](04_column_selection.png)
 
 ### 5. Visualizing Relationships
 
@@ -62,6 +74,10 @@ Three visualization types reveal different layers of the data:
 - **Pairplot** — plots every variable against every other simultaneously, surfacing correlations, clusters, and outliers before committing to a specific chart
 - **Correlation heatmap** — annotated with coefficients and colored by direction and strength, makes relationships between variables immediately readable
 - **Line plots over time** — looped automatically across variables, illustrating that automation is not a feature but the point: four lines of code generate four publication-quality charts in sequence on every run
+- 
+![Pairplot](05_pairplot.png)
+![Heatmap](05_heatmap.png)
+![Line Plot](05_lineplot.png)
 
 ## Key Findings
 
